@@ -1,4 +1,4 @@
-const main_container=document.getElementById("main-container");
+const details_container=document.getElementById("details-container");
 
 
 async function data_retrive(){ 
@@ -251,5 +251,5 @@ function female_table_creation(data){
                   table1.appendChild(tr);
     }
     
-    main_container.appendChild(table1);
+    details_container.appendChild(table1);
     }
