@@ -44,6 +44,7 @@ let data=await responce.json();
     }
 
     function sortTable(sortType) {
+        let data1;
         switch (sortType) {
           case 'asc':
             data.sort((a, b) => a.first_name.localeCompare(b.first_name));
@@ -55,7 +56,7 @@ let data=await responce.json();
             data.sort((a, b) => a.marks - b.marks);
             break;
           case 'passing':
-            data = data.filter((item) => { return item.passing});
+           data1 = data.filter((item) => { return item.passing});
             break;
           case 'class':
             console.log(data);
@@ -64,7 +65,14 @@ let data=await responce.json();
           default:
             break;
         }
+
+        if(sortType==='passing'){
+            table_creation(data1);
+        }
+        else{
         table_creation(data); // Update the table with sorted data
+        }
+        
       }
     
 }
